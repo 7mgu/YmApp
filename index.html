@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" type="image/x-icon" href="" />
     <title>映克</title>
-    <meta name="description" content="映克，映在这一刻">
-    <meta content="data/icon.png" itemprop="image" property="og:image">
     <meta content="IOS/Android移动应用安全下载" itemprop="description" name="Description">
+    <meta name="Description" content="映克，映在这一刻">
+    <meta content="data/icon.png" itemprop="image" property="og:image">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta content="telephone=no" name="format-detection" />
@@ -18,37 +18,51 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="data/jquery.js"></script>
     <script src="data/qrcode.js"></script>
-    <!-- <script> 防止扒站跳转-->
-<!-- var a = 'retrtrfdcfvvvv'; -->
-<!-- var ym = window.location; -->
-<!-- var ym2 = 'http://www.baidu.com'; -->
-<!-- var ym3 = String(ym); -->
- 
-<!-- function suan(a){ -->
-<!-- var re = a.substring(0,2); -->
-<!-- var tr = a.substring(2,4); -->
-<!-- var tr2 = a.substring(4,6); -->
-<!-- var fd = a.substring(6,8); -->
-<!-- var cf = a.substring(8,10); -->
-<!-- var vv = a.substring(10,12); -->
-<!-- var vv2 = a.substring(12,14); -->
-<!-- re = 'h'; -->
-<!-- tr = 't'; -->
-<!-- tr2 ='t'; -->
-<!-- fd = 'p'; -->
-<!-- cf = ':'; -->
-<!-- vv = '/'; -->
-<!-- vv2 = '/'; -->
-<!-- var p = re+tr+tr2+fd+cf+vv+vv2; -->
-<!-- return p; -->
-<!-- } -->
-<!-- if (ym3.indexOf(ym2) == -1 ) { -->
-<!-- alert(ym2); -->
-<!-- // var av = ym3; -->
-<!-- var b = suan(a) + 'https://www.baidu.com' + '/'; -->
-<!-- window.location = b; -->
-<!-- } -->
-<!-- </script> -->
+
+<script>
+  var title = document.title.replace(/( - NOah| - 诺亚)$/, '')
+      imgUrl = '';
+  
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var imgUrlEl = document.querySelector('.readme-box .markdown-body > img, .readme-box .markdown-body :not(a) > img');
+    imgUrl = imgUrlEl && imgUrlEl.getAttribute('src');
+  
+    if (!imgUrl) {
+      imgUrlEl = document.querySelector('meta[itemprop=image]');
+      imgUrl = imgUrlEl && imgUrlEl.getAttribute('content');
+      imgUrl = imgUrl || "images/NOahLogo.png";
+    }
+  
+    wx.config({
+      debug: false,
+      appId: "wxff219d611a159737",
+      timestamp: "1622485604",
+      nonceStr: "acfa9fcf2b2b01a4111a7732f33ec063",
+      signature: "92e36531fc6b7f5ec0b66da7890aed210f7a5868",
+      jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage'
+      ]
+    });
+  
+    wx.ready(function () {
+      wx.onMenuShareTimeline({
+        title: title, // 分享标题
+        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: imgUrl // 分享图标
+      });
+      wx.onMenuShareAppMessage({
+        title: title, // 分享标题
+        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        desc: document.querySelector('meta[name=Description]').getAttribute('content'),
+        imgUrl: imgUrl // 分享图标
+      });
+    });
+    wx.error(function(res){
+      console.error('err', res)
+    });
+  })
+</script>
 </head>
 
 <body>
