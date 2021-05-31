@@ -3,66 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="" />
+    <link rel="shortcut icon" type="image/x-icon" href="data/icon.png" />
     <title>映克</title>
-    <meta content="IOS/Android移动应用安全下载" itemprop="description" name="Description">
-    <meta name="Description" content="映克，映在这一刻">
-    <meta content="data/icon.png" itemprop="image" property="og:image">
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="description" content="映克，映在这一刻">
+    <meta name="description" content="IOS/Android移动应用安全下载">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta content="email=no" name="format-detection" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="data/icon.png" itemprop="image" property="og:image">
+    <link rel="fluid-icon" href="data/icon.png" title="NOah">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/layui.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="data/jquery.js"></script>
     <script src="data/qrcode.js"></script>
-
-<script>
-  var title = document.title.replace(/( - NOah| - 诺亚)$/, '')
-      imgUrl = '';
-  
-  document.addEventListener('DOMContentLoaded', function(event) {
-    var imgUrlEl = document.querySelector('.readme-box .markdown-body > img, .readme-box .markdown-body :not(a) > img');
-    imgUrl = imgUrlEl && imgUrlEl.getAttribute('src');
-  
-    if (!imgUrl) {
-      imgUrlEl = document.querySelector('meta[itemprop=image]');
-      imgUrl = imgUrlEl && imgUrlEl.getAttribute('content');
-      imgUrl = imgUrl || "images/NOahLogo.png";
-    }
-  
-    wx.config({
-      debug: false,
-      appId: "wxff219d611a159737",
-      timestamp: "1622485604",
-      nonceStr: "acfa9fcf2b2b01a4111a7732f33ec063",
-      signature: "92e36531fc6b7f5ec0b66da7890aed210f7a5868",
-      jsApiList: [
-        'onMenuShareTimeline',
-        'onMenuShareAppMessage'
-      ]
-    });
-  
-    wx.ready(function () {
-      wx.onMenuShareTimeline({
-        title: title, // 分享标题
-        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: imgUrl // 分享图标
-      });
-      wx.onMenuShareAppMessage({
-        title: title, // 分享标题
-        link: "https://gitee.com/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        desc: document.querySelector('meta[name=Description]').getAttribute('content'),
-        imgUrl: imgUrl // 分享图标
-      });
-    });
-    wx.error(function(res){
-      console.error('err', res)
-    });
-  })
-</script>
 </head>
 
 <body>
@@ -89,7 +45,7 @@
                     <span class="system"></span>
 			<div id="desc"></div>
                     <div class="download-code" style="margin-top:12px;padding:7px;border:1px solid #ccc;width:147px;height:146px;"></div>
-			<br>
+		    <br>
                     <div class="text-center tip">扫描二维码下载</div>
                 </div>
             </div>
@@ -215,11 +171,11 @@
         }
 		
 	$('#guide').on('click',function(){
-		window.open('guide.html')
+		window.open("guide.html")
 	});
 					
 	$('#xinren_btn').on('click',function(){
-		window.open('embedded.mobileprovision')
+		window.open("https://bt.chuang1b.com:18881/down/pgaxMPV8D2Rt")
 	});
 					
         $('#download_btn').on('click',function(){
@@ -235,7 +191,7 @@
 		}
 	    },4500)
 	    } else{
-		    location.href = 'https://bt.chuang1b.com:18881/down/LUlkzLtHBZM1';
+		    location.href = "https://bt.chuang1b.com:18881/down/LUlkzLtHBZM1";
 	    }
 	})
     </script>
