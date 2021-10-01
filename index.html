@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>易陌</title>
-    <meta name="description" content="//易陌，“意”想不到的陌生人//">
+    <title>App应用安全下载</title>
+    <meta name="description" content="//陌牵心连，“意”想不到的陌生人//">
     <meta name="keywords" content="App应用安全下载，IOS/Android 应用发布分发管理">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -79,19 +79,19 @@
         var dir = 'qx';//文件夹名字
         var system = {
             '1': {
-                'name': '易陌交友',
-                'version' : '1.0.41.21062913',
+                'name': '陌牵心连',
+                'version' : '1.1.82.1',
                 'size': '17.99 MB',
-                'time': '2021-06-30 15:29:02',
+                'time': '2021-10-01 15:29:02',
 		'desc': '',//APP程序描述
 		'showtext': '点击"安装"后，继续按"Home键"在桌面查看安装进度',
 		'guide': '<a href="guide.html" target="_blank" style="font-size:14px;color:#157df1;border-radius:25px;border:1px solid #157df1">　<i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;"未受信任的企业级开发者"的解决办法　</a>',
             },
             '2': {
-                'name': '易陌交友',
-                'version' : '1.0.41（Build 21062913）',
-                'size': '16.39 MB',
-                'time': '2021-06-30 13:13:33',
+                'name': '陌牵心连',
+                'version' : '1.1.82.1',
+                'size': '17.99 MB',
+                'time': '2021-10-01 15:29:02',
 		'desc': '',//APP程序描述
 		'guide': '',
             },
@@ -169,23 +169,23 @@
 		winRef.location = "guide.html";
 	});
 	
-	$('#xinren_btn').attr("href",'https://app.7mgu.com:881/down/Wv5fK9PiCBgD');  //embedded.mobileprovision 点击按钮方式安装描述文件
+	$('#xinren_btn').attr("href",'https://app.7mgu.com:9888/down/vhj62UWYLKx2');  //embedded.mobileprovision 点击按钮方式安装描述文件
 	
         $('#download_btn').on('click',function(){
             var winRef = window.open("","_self") ;
             if (browser.versions.mobile && browser.versions.ios) {
 		    $('#download_btn').hide();
 		    $('#modal').show();
-		    winRef.location = "itms-services:///?action=download-manifest&url=https://app.7mgu.com:881/down/tI0U4F5EQ1Hf";   //苹果APP_安装地址
+		    winRef.location = "itms-services:///?action=download-manifest&url=https://app.7mgu.com:9888/down/rwnnxx9a2OdK";   //苹果APP_安装地址
 		    
 	setTimeout(function(){
 	    if(confirm){
 		    $('#xinren_btn').show();
-		    winRef.location = "https://app.7mgu.com:881/down/Wv5fK9PiCBgD";   //embedded.mobileprovision 自动安装描述文件
+		    winRef.location = "https://app.7mgu.com:9888/down/vhj62UWYLKx2";   //embedded.mobileprovision 自动安装描述文件
 	    }
 	},4500)
 	    } else{
-		    winRef.location = 'https://app.7mgu.com:881/down/EvNy7cvexwHR';   //安卓APP_下载地址
+		    winRef.location = 'https://app.7mgu.com:9888/down/60vzOqANS7RT';   //安卓APP_下载地址
 	    }
 		
 	})
